@@ -4,16 +4,16 @@ on:
 
 jobs:
   Plan:
-    uses: RekhuGopal/aws_eks_labs/.github/workflows/aws_tf_plan.yml@main
+    uses: NiksaJadric/EADCA2-infrastructure/.github/workflows/aws_tf_plan.yml@master
     with:
       gh_environment: dev
     secrets:
-      cli_config_credentials_token: ${{ secrets.TFC_API_TOKEN }}
+      cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
   Apply:
     needs: Plan
-    uses: RekhuGopal/aws_eks_labs/.github/workflows/aws_tf_appy.yml@main
+    uses: NiksaJadric/EADCA2-infrastructure/.github/workflows/aws_tf_appy.yml@master
     with:
       gh_environment: dev
     secrets:
-      cli_config_credentials_token: ${{ secrets.TFC_API_TOKEN }}
+      cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}

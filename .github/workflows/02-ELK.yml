@@ -16,7 +16,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2.0.2
         with:
           terraform_version: latest
-          cli_config_credentials_token: ${{ secrets.TFC_API_TOKEN }}
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Terraform Init
         id: init
@@ -43,7 +43,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2  # Specify your preferred AWS region
+          aws-region: eu-west-1  # Specify your preferred AWS region
 
       - name: Verify AWS Credentials
         run: aws sts get-caller-identity
