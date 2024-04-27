@@ -1,4 +1,4 @@
-name: "01-EKS"
+name: "001-EKS"
 
 on:
   push:
